@@ -9,6 +9,10 @@
 #import "RRMyScene.h"
 #import "RRSecondScene.h"
 
+@interface RRMyScene ()
+@property (nonatomic, strong) SKLabelNode *myLabel;
+@end
+
 @implementation RRMyScene
 
 -(id)initWithSize:(CGSize)size {    
@@ -17,14 +21,13 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        _myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         
-        myLabel.text = @"Change scene";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
+        _myLabel.fontSize = 25;
+        _myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                        CGRectGetMidY(self.frame));
-        myLabel.name = @"label";
-        [self addChild:myLabel];
+        _myLabel.name = @"label";
+        [self addChild:_myLabel];
     }
     return self;
 }
@@ -46,8 +49,8 @@
         _timer = [[RRLoopTimerUpdate alloc] init:currentTime];
     
     currentTime += _timer.rangeTimer;
-    
-    NSLog(@"current timer = [%f]", currentTime);
+
+    _myLabel.text = [NSString stringWithFormat:@"Clic : %f", currentTime];
 }
 
 @end
