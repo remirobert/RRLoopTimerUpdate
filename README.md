@@ -22,6 +22,8 @@ Overview
 
 ````
 
+![Alt text](https://raw.githubusercontent.com/remirobert/RRLoopTimerUpdate/master/ProjectTest/record.gif "Project Test")
+
 >###*freezeTimer*###
 > Used to set the timer to keep the current timer value in the update loop of SKScene.
 
